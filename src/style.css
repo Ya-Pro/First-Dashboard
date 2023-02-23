@@ -285,6 +285,12 @@ section .personsD img {
 .personsD .social span {
   font-size: 0.8rem;
 }
+  .content.content__show {
+    margin-left: 5rem;
+  }
+  .sidebar.sidebar__show {
+    width: 0;
+  }
 /* responsive part */
 @media screen and (max-width: 1024px) {
   header {
