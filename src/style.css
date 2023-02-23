@@ -1,0 +1,343 @@
+:root {
+  --bgC: rgb(255, 36, 80);
+  --textC: #888;
+  --bg-textC: black;
+  --lightBg: rgb(242, 242, 242);
+}
+::before,
+::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 14px;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+  font-family: "Rowdies", cursive;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  list-style: none;
+}
+body {
+  max-height: 100vh;
+}
+.sidebar {
+  width: 20rem;
+  height: 100%;
+  background-color: var(--bgC);
+  position: fixed;
+  transition: all .5s ease-in-out;
+}
+.sidebar-brand {
+  height: 7rem;
+  padding: 1rem;
+  color: white;
+  font-size: 0.8rem;
+  margin-top: 3rem;
+}
+.sidebar-brand span {
+  margin-right: 1rem;
+}
+.checkbox {
+  position: absolute;
+  left: 20.1rem;
+  top: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  display: none;
+}
+#nav-toggle {
+  position: fixed;
+  left: 1rem;
+  top: 0.2rem;
+  font-size: 1.5rem;
+  z-index: 10000000;
+  color: white;
+}
+#nav-toggle:checked + .sidebar {
+  width: 4rem;
+}
+#nav-toggle:checked + .sidebar .sidebar-brand h1 span:last-child,
+#nav-toggle:checked + .sidebar li a span:last-child {
+  transition: all 0.5s linear;
+  display: none;
+}
+.sidebar-menu ul {
+  position: relative;
+}
+.sidebar-menu ul li {
+  margin-bottom: 1.4rem;
+  padding-left: 2rem;
+  width: 100%;
+}
+.hovered {
+  background-color: white;
+  padding: 1rem 0.5rem;
+  border-radius: 1.5rem 0 0 1.5rem;
+}
+.sidebar-menu ul li a {
+  display: block;
+  color: var(--bg-textC);
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: relative;
+}
+.sidebar-menu ul li a span:first-child {
+  margin-right: 0.9rem;
+}
+
+/* content -------------------------------- */
+.content {
+  margin-left: 20rem;
+  transition: all .5s ease-in-out;
+}
+
+.content header {
+  margin-left: 2rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+header .input {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+header .input input {
+  padding: 0.5rem 2.5rem;
+  background-color: #ddd;
+  border-radius: 2rem;
+  font-size: 1rem;
+}
+.input input::placeholder {
+  color: var(--bgc);
+  font-size: 1.1rem;
+}
+header .input span {
+  position: absolute;
+  margin-left: 1rem;
+  font-size: 0.8rem;
+}
+header .input:checked span {
+  display: none;
+}
+header .personal {
+  display: flex;
+  gap: 0.2rem;
+}
+header .personal img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+.under-head {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 1rem;
+  box-shadow: 0 -0.1rem 0.1rem #ccc;
+}
+.under-head .customers {
+  background-color: var(--lightBg);
+  padding: 1rem 0 1rem 2rem;
+  border-radius: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.under-head .customers:last-child {
+  background-color: var(--bgC);
+  color: white;
+}
+/* under the header */
+.bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.customers:hover {
+  background-color: var(--bgC);
+  color: white;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.customers:hover:last-child {
+  background-color: #eee;
+  color: crimson;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+aside .details {
+  padding: 0.5rem 0.5rem;
+  background-color: var(--lightBg);
+  border-radius: 1rem;
+}
+aside .details .recent {
+  display: flex;
+  padding: 0.5rem 3rem;
+  align-items: center;
+  border-bottom: 0.1rem solid rgb(209, 209, 209);
+}
+aside .details .recent h3 {
+  margin-right: 16rem;
+  font-size: 1em;
+}
+aside .details .recent button {
+  background-color: var(--bgC);
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 0.1rem solid transparent;
+}
+aside .details .recent button:hover {
+  background-color: white;
+  color: var(--bgC);
+  transition: all 0.3s;
+  border: 0.1rem solid var(--bgC);
+}
+aside .table {
+  border-collapse: collapse;
+}
+aside .table th,
+td {
+  padding: 0.2rem 3rem;
+}
+aside .table th {
+  font-size: 1.2rem;
+  border-bottom: 0.1rem solid rgb(209, 209, 209);
+}
+aside .table td {
+  font-size: 0.95rem;
+}
+aside .table td span {
+  margin-right: 0.8rem;
+  color: var(--bgC);
+}
+.table tr:hover {
+  background-color: var(--bgC);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.table tr:nth-child(odd) td span {
+  margin-right: 0.8rem;
+  color: var(--bgC);
+}
+.table tr:nth-child(even) td span {
+  margin-right: 0.8rem;
+  color: orange;
+}
+.table tr:nth-child(5) td span {
+  color: green;
+}
+/* ---------------------------persons--------------------------- */
+section {
+  height: 49rem;
+  padding: 1rem;
+  background-color: #eee;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+section .new {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 0.1rem solid rgb(215, 215, 215);
+}
+section .new h4 {
+  margin-right: 3rem;
+}
+section .new button {
+  background-color: var(--bgC);
+  padding: 0.5rem 1.1rem;
+  border-radius: 1rem;
+  color: white;
+  font-size: 0.9rem;
+  border: 0.1rem solid transparent;
+  cursor: pointer;
+}
+.new button:hover {
+  background-color: white;
+  border: 0.1rem solid var(--bgC);
+  color: var(--bgC);
+}
+section .personsD img {
+  opacity: 0.8;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+.personsD {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.personsD .social span {
+  font-size: 0.8rem;
+}
+/* responsive part */
+@media screen and (max-width: 1024px) {
+  header {
+  flex-direction: column; 
+  gap: 1rem
+  }
+  .content.content__show {
+    margin-left: 5rem;
+  }
+  .sidebar.sidebar__show {
+    width: 0;
+  }
+  .under-head {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .customers {
+    width:90% ;
+  }
+  .bottom {
+    flex-direction: column;
+  }
+}
+@media screen  and (max-width: 700px) {
+  html {
+    font-size: 12px;
+  }
+    .content{
+    margin-left: 5rem;
+  }
+  .sidebar {
+    width: 0;
+  }
+  aside .table th, td {
+    padding: unset;
+  }
+  #nav-toggle {
+    color: crimson;
+  }
+  aside .details {
+    width: 90%;
+  }
+  aside .details .recent {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  aside .details .recent h3 {
+    margin-right: 0;
+  }
+  .list li span + span {
+    opacity: 0;
+  }
+  .sidebar-brand span {
+    display: none;
+  }
+}
